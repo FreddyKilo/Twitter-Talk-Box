@@ -16,6 +16,6 @@ for tweet in stream.user():
         if USERNAME in text:
             text = text[len(USERNAME) + 1:]
         user = tweet.get('user').get('name')
-        say = user + " said " + text
-        print(say)
-        os.system("say " + say)
+        say = user + " said. " + text
+	print("flite -voice slt -t " + "\"" + say + "\"")
+        os.system("flite -voice slt -t " + "\"" + say + "\"")
